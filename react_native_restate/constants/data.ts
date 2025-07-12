@@ -211,12 +211,12 @@ export const reviews = [
     id: 1,
     user: {
       name: "John Doe",
-      avatar: images.avatar,
+      avatar: images.agentAvatar,
     },
     rating: 4.5,
     comment: {
       name: "John Doe",
-      review: "Great place! Very clean and well-maintained.",
+      review: "Working with Mapiles was a breeze! They were professional, friendly, and always quick to respond. The entire process felt smooth and stress-free. Highly recommended for anyone looking for a reliable and easy-to-deal-with real estate agent.",
       createdAt: "2023-10-01T12:00:00Z",
     },
   },
