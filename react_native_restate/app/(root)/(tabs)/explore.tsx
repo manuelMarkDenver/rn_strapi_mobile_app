@@ -46,7 +46,7 @@ const index = () => {
 
             <View className="mt-5">
               <Text className="text-xl font-rubik-bold text-blue-300 mt-5">
-                Found 6 properties
+                Found {cards.length} properties
               </Text>
             </View>
           </View>

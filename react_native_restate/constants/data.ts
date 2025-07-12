@@ -58,7 +58,7 @@ export const cards = [
   },
   {
     id: 7,
-    title: "Beachfront Villa in Batangas",
+    title: "Magnificent Villa in Batangas",
     location: "Nasugbu, Batangas",
     price: "₱75,300,000",
     rating: 4.9,
