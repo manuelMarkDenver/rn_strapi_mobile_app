@@ -78,18 +78,20 @@ export const cards = [
 
 export const featuredCards = [
   {
-    title: "Featured 1",
-    location: "Location 1",
-    price: "$100",
+    id: 1,
+    title: "Luxury Apartment in Makati",
+    location: "Makati City",
+    price: "₱1,200,000",
     rating: 4.8,
     image: images.newYork,
     category: "Townhomes",
   },
   {
-    title: "Featured 2",
-    location: "Location 2",
-    price: "$200",
-    rating: 3,
+    id: 2,
+    title: "Modern House in Quezon City",
+    location: "Quezon City",
+    price: "₱2,500,000",
+    rating: 4.5,
     image: images.japan,
     category: "Condos",
   },
@@ -212,8 +214,11 @@ export const reviews = [
       avatar: images.avatar,
     },
     rating: 4.5,
-    comment: "Great place to stay! Highly recommend.",
-    date: "2023-10-01",
+    comment: {
+      name: "John Doe",
+      review: "Great place! Very clean and well-maintained.",
+      createdAt: "2023-10-01T12:00:00Z",
+    },
   },
   {
     id: 2,
@@ -222,7 +227,10 @@ export const reviews = [
       avatar: images.avatar,
     },
     rating: 4.0,
-    comment: "Very comfortable and clean. Would stay again.",
-    date: "2023-10-02",
+    comment: {
+      name: "Jane Smith",
+      review: "Great place! Very clean and well-maintained.",
+      createdAt: "2023-10-01T12:00:00Z",
+    },
   },
 ];

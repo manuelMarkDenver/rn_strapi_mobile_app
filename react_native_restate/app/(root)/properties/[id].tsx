@@ -163,10 +163,7 @@ const Property = () => {
                       className="flex flex-1 flex-col items-center min-w-16 max-w-20"
                     >
                       <View className="size-14 bg-primary-100 rounded-full flex items-center justify-center">
-                        <Image
-                          source={facility!}
-                          className="size-6"
-                        />
+                        <Image source={facility.icon!} className="size-6" />
                       </View>
 
                       <Text
@@ -238,7 +235,7 @@ const Property = () => {
               </View>
 
               <View className="mt-5">
-                <Comment item={reviews[0].comment} />
+                <Comment item={reviews[0]} />
               </View>
             </View>
           )}
@@ -255,7 +252,7 @@ const Property = () => {
               numberOfLines={1}
               className="text-primary-300 text-start text-2xl font-rubik-bold"
             >
-              ${cards[0].price}
+              {cards[0].price}
             </Text>
           </View>
 

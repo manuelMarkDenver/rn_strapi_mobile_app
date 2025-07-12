@@ -8,7 +8,7 @@ import icons from "@/constants/icons";
 import Search from "@/components/Search";
 import { Card, FeaturedCard } from "@/components/Cards";
 import Filters from "@/components/Filters";
-import { cards } from "@/constants/data"; // Assuming you have a data file with the necessary data
+import { cards, featuredCards } from "@/constants/data"; // Assuming you have a data file with the necessary data
 
 const index = () => {
   return (
@@ -59,9 +59,14 @@ const index = () => {
               </View>
 
               <FlatList
-                data={[1, 2, 3, 4]}
-                renderItem={({ item }) => <FeaturedCard />}
-                keyExtractor={(item) => item.toString()}
+                data={featuredCards.slice(0, 2)}
+                renderItem={({ item }) => (
+                  <FeaturedCard
+                    item={item}
+                    onPress={() => router.push(`/properties/${item.id}`)}
+                  />
+                )}
+                keyExtractor={(item) => item.id.toString()}
                 bounces={false}
                 horizontal
                 showsHorizontalScrollIndicator={false}

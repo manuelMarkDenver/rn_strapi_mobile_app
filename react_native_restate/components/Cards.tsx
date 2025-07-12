@@ -17,12 +17,14 @@ interface Props {
 }
 
 export const FeaturedCard = ({ item, onPress }: Props) => {
+  if (!item) return null;
+  const { image, title, location, price } = item;
   return (
     <TouchableOpacity
       onPress={onPress}
       className="flex flex-col items-start w-60 h-80 relative"
     >
-      <Image source={images.japan} className="size-full rounded-2xl" />
+      <Image source={image} className="size-full rounded-2xl" />
 
       <Image
         source={images.cardGradient}
@@ -41,15 +43,15 @@ export const FeaturedCard = ({ item, onPress }: Props) => {
           className="text-xl font-rubik-extrabold text-white"
           numberOfLines={1}
         >
-          Modern Apartment
+          {title}
         </Text>
         <Text className="text-base font-rubik text-white" numberOfLines={1}>
-          17 Narra St, Tokyo, Japan
+          {location}
         </Text>
 
         <View className="flex flex-row items-center justify-between w-full">
           <Text className="text-xl font-rubik-extrabold text-white">
-            Php5,500,000
+            {price}
           </Text>
           <Image source={icons.heart} className="size-5" />
         </View>
