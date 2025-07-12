@@ -216,7 +216,7 @@ export const reviews = [
     rating: 4.5,
     comment: {
       name: "John Doe",
-      review: "Working with Mapiles was a breeze! They were professional, friendly, and always quick to respond. The entire process felt smooth and stress-free. Highly recommended for anyone looking for a reliable and easy-to-deal-with real estate agent.",
+      review: "Working with Mapiles Realty was a breeze! They were professional, friendly, and always quick to respond. The entire process felt smooth and stress-free. Highly recommended for anyone looking for a reliable and easy-to-deal-with real estate agent.",
       createdAt: "2023-10-01T12:00:00Z",
     },
   },
