@@ -4,7 +4,15 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Models } from "react-native-appwrite";
 
 interface Props {
-  item: Models.Document;
+  item: {
+    id: number;
+    title: string;
+    location: string;
+    price: string;
+    rating: number;
+    category: string;
+    image: any; // or whatever type your image is
+  };
   onPress?: () => void;
 }
 
@@ -51,6 +59,8 @@ export const FeaturedCard = ({ item, onPress }: Props) => {
 };
 
 export const Card = ({ item, onPress }: Props) => {
+  if (!item) return null;
+
   return (
     <TouchableOpacity
       className="flex-1 w-full mt-4 px-3 py-4 rounded-lg bg-white shadow-lg shadow-black-100/70 relative"
@@ -59,23 +69,23 @@ export const Card = ({ item, onPress }: Props) => {
       <View className="flex flex-row items-center absolute px-2 top-5 right-5 bg-white/90 p-1 rounded-full z-50">
         <Image source={icons.star} className="size-2.5" />
         <Text className="text-xs font-rubik-bold text-primary-300 ml-0.5">
-          4.9
+          {item.rating}
         </Text>
       </View>
 
-      <Image source={images.newYork} className="w-full h-40 rounded-lg" />
+      <Image source={item.image} className="w-full h-40 rounded-lg" />
 
       <View className="flex flex-col mt-2">
         <Text className="text-base font-rubik-bold text-black-300">
-          Cozy House
+          {item.title}
         </Text>
         <Text className="text-xs font-rubik text-black-100">
-          Santol, Quezon City, Philippines
+          {item.location}
         </Text>
 
         <View className="flex flex-row items-center justify-between mt-2">
           <Text className="text-base font-rubik-bold text-primary-300">
-            Php3,250,000
+            ${item.price}
           </Text>
           <Image
             source={icons.heart}

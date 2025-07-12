@@ -8,14 +8,20 @@ import icons from "@/constants/icons";
 import Search from "@/components/Search";
 import { Card, FeaturedCard } from "@/components/Cards";
 import Filters from "@/components/Filters";
+import { cards } from "@/constants/data"; // Assuming you have a data file with the necessary data
 
 const index = () => {
   return (
     <SafeAreaView className="bg-white h-full">
       <FlatList
-        data={[1, 2, 3, 4]}
-        renderItem={() => <Card />}
-        keyExtractor={(item) => item.toString()}
+        data={cards}
+        renderItem={({ item }) => (
+          <Card
+            item={item}
+            onPress={() => router.push(`/properties/${item.id}`)}
+          />
+        )}
+        keyExtractor={(item) => item.id.toString()}
         numColumns={2}
         contentContainerClassName="pb-32"
         columnWrapperClassName="flex gap-5 px-5"
@@ -40,7 +46,7 @@ const index = () => {
 
             <View className="mt-5">
               <Text className="text-xl font-rubik-bold text-blue-300 mt-5">
-                Found 5 properties
+                Found 6 properties
               </Text>
             </View>
           </View>

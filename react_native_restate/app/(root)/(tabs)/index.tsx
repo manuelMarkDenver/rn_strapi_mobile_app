@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import images from "@/constants/images";
@@ -8,14 +8,20 @@ import icons from "@/constants/icons";
 import Search from "@/components/Search";
 import { Card, FeaturedCard } from "@/components/Cards";
 import Filters from "@/components/Filters";
+import { cards } from "@/constants/data"; // Assuming you have a data file with the necessary data
 
 const index = () => {
   return (
     <SafeAreaView className="bg-white h-full">
       <FlatList
-        data={[1, 2, 3, 4]}
-        renderItem={() => <Card />}
-        keyExtractor={(item) => item.toString()}
+        data={cards.slice(0, 4)}
+        renderItem={({ item }) => (
+          <Card
+            item={item}
+            onPress={() => router.push(`/properties/${item.id}`)}
+          />
+        )}
+        keyExtractor={(item) => item.id.toString()}
         numColumns={2}
         contentContainerClassName="pb-32"
         columnWrapperClassName="flex gap-5 px-5"
@@ -77,7 +83,6 @@ const index = () => {
             </View>
 
             <Filters />
-         
           </View>
         }
       />
